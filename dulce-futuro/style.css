@@ -1,0 +1,329 @@
+/* MOBILE-FIRST: Estilos básicos para dispositivos pequeños */
+:root {
+    --primary-color: #ff69b4; /* Rosa */
+    --secondary-color: #4b0082; /* Índigo */
+    --text-color: #333;
+    --background-color: #fff;
+    --contrast-text-color: #fff;
+    --contrast-background-color: #000;
+    --card-background: #f8f9fa;
+    --card-border: #ddd;
+    --max-width: 1200px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.logo a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Oculto por defecto en móvil */
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu li {
+    margin: 0.5rem 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 0.5rem;
+    display: block;
+}
+
+.hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.accessibility-tools {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.accessibility-tools button {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.button {
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.primary-button {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.hero-banner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.hero-image-container {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 80%;
+}
+
+.hero-buttons {
+    margin-top: 1rem;
+}
+
+.section-title {
+    text-align: center;
+    margin: 2rem 0;
+    color: var(--secondary-color);
+}
+
+.what-we-do-section, .courses-section, .success-stories-section, .support-section, .contact-section {
+    padding: 2rem 1rem;
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.what-we-do-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+}
+
+.courses-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding: 1rem;
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.success-stories-section {
+    background-color: var(--card-background);
+}
+
+.stories-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.story-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.story-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.support-section {
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid var(--card-border);
+    border-radius: 4px;
+}
+
+.main-footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+}
+
+/* MEDIA QUERIES PARA ADAPTACIÓN A TABLET Y ESCRITORIO */
+@media (min-width: 768px) {
+    .main-header {
+        flex-wrap: nowrap;
+    }
+    
+    .hamburger-menu {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .accessibility-tools {
+        width: auto;
+        margin-top: 0;
+    }
+
+    .what-we-do-items {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stories-container {
+        flex-direction: row;
+    }
+}
+
+/* ESTILOS PARA ACCESIBILIDAD (JavaScript) */
+body.high-contrast {
+    background-color: var(--contrast-background-color);
+    color: var(--contrast-text-color);
+}
+
+body.high-contrast .main-header,
+body.high-contrast .accessibility-tools button {
+    background-color: var(--contrast-background-color);
+    color: var(--contrast-text-color);
+    border-color: var(--contrast-text-color);
+}
+
+body.high-contrast .main-header {
+    border-bottom-color: var(--contrast-text-color);
+}
+
+body.high-contrast .logo a {
+    color: var(--contrast-text-color);
+}
+
+body.high-contrast .nav-menu a {
+    color: var(--contrast-text-color);
+}
+
+body.high-contrast .course-card {
+    background-color: #333;
+    border-color: var(--contrast-text-color);
+}
+
+body.high-contrast .success-stories-section {
+    background-color: #333;
+}
+
+body.high-contrast .primary-button {
+    background-color: #fff;
+    color: #000;
+}
+
+body.high-contrast .secondary-button {
+    background-color: transparent;
+    color: #fff;
+    border-color: #fff;
+}
+
+body.reader-mode {
+    font-family: serif !important;
+    line-height: 1.8 !important;
+    letter-spacing: 0.05em !important;
+}
